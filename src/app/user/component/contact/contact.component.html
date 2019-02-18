@@ -1,0 +1,24 @@
+<div class="container">
+ 
+
+
+        <form #profileData="ngForm" (ngSubmit)="complaintregistration(Description.value)">
+      
+              <!--First Name-->
+              <div class="form-group">
+                <label style="color:brown">Complaint Description.</label>
+                <input type="text"
+                       class="form-control"
+                       #Description
+                       ngModel
+                       name="Description"
+                       required
+                       style="background-color : #d1d1d1;"
+                       >
+              </div>
+               <!-- Submit Button -->
+        <div class="form-group" align="center" style="margin-top: 10px">
+                <input type="submit" class="btn btn-success">
+            </div>
+</form>              
+</div>

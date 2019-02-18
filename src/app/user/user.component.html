@@ -1,0 +1,23 @@
+<div class="container">
+  <div class="row">
+    <div class="col s8 offser-s2">
+      <div class="card pink lighten-2">
+        <div class="card-tabs">
+          <ul class="tabs-fixed-width tabs-transparent">
+            <li class="tab">
+              <a routerLink='/login' routerLinkActive='active'><b>Sign In</b></a>
+            </li>
+            <li class="tab"  >
+              <a routerLink='/signup' routerLinkActive='active'><b>Sign Up</b></a>
+            </li>
+          </ul>
+        </div>
+        <div class="card-content white">
+          <div class="row">
+            <router-outlet></router-outlet>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

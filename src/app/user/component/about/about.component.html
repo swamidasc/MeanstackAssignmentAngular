@@ -1,0 +1,67 @@
+
+<table id="dtBasicExample" class="table table-striped table-bordered table-sm" cellspacing="0" width="100%">
+<thead>
+    <tr>
+        <th class="th-sm">ComplaintId</th>
+        <th class="th-sm">ComplaintCreatedDate</th>
+        <th class="th-sm">ComplaintStatus</th>
+        <th class="th-sm">ComplaintUpdatedDate</th>
+
+    </tr>
+</thead>
+<tbody>
+    <tr *ngFor="let list of Result ; let i=index;">
+        <td>
+            {{list._id}}
+        </td>
+      
+        <td>
+            {{list.complaint_created_date}}
+        </td>
+        <td>
+            {{list.complaint_status}}
+        </td>
+        <td>
+            {{list.complaint_updated_date}}
+        </td>
+        <td>
+                <!-- <button (click)="ViewComplaint();">View</button> -->
+                <button (click)="ViewComplaint(list._id,list.complaint_description)">View</button>
+            </td>
+            
+    </tr>
+                                                           
+</tbody>
+
+</table>
+
+<div class="container" *ngIf="display"> 
+
+<label style="color:brown">Complaint Details</label>
+    {{cdescription}}
+<br>
+    <form #statusData="ngForm" (ngSubmit)="complaintstatus(Status.value)" *ngIf="isAgent">
+      
+            <!--First Name-->
+            <div class="form-group">
+              <label style="color:brown">Complaint Status Update.</label>
+              <input type="text"
+                     class="form-control"
+                     #Status
+                     ngModel
+                     name="Status"
+                     required
+                     style="background-color : #d1d1d1;"
+                     >     
+
+            </div>
+                
+           
+             <!-- Submit Button -->
+      <div class="form-group" align="center" style="margin-top: 10px">
+              <input type="submit" class="btn btn-success">
+          </div>
+          <button (click)="Close()">Close</button>    
+</form>           
+
+</div>

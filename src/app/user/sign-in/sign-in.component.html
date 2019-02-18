@@ -1,0 +1,23 @@
+<!-- <form #loginForm="ngForm" class="col s12 white" (ngSubmit)="OnSubmit(UserName.value,Password.value)"> -->
+<!-- <form #loginForm="ngForm" class="col s12 white" (ngSubmit)="onsu()"> -->
+   <form #loginForm="ngForm" class="col s12 white" (ngSubmit)="OnSubmit(UName.value,Pwd.value)"> 
+
+  <div class="row">
+    <div class="input-field col s12">
+      <i class="material-icons prefix">account_circle</i>
+      <input type="text" #UName ngModel name="UserName" placeholder="Email" required>
+    </div>
+  </div>
+  <div class="row">
+      <div class="input-field col s12">
+        <i class="material-icons prefix">vpn_key</i>
+        <input type="password" #Pwd ngModel name="Password" placeholder="Password">
+      </div>
+    </div>
+    <div class="row">
+        <div class="input-field col s12">
+         <button [disabled]="!loginForm.valid" class="brn-large btn-submit" type="submit">Login</button>
+        </div>
+      </div>
+</form> 
+

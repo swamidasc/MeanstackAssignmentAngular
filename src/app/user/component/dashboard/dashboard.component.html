@@ -1,0 +1,51 @@
+
+<header>
+  <nav class="navbar fixed-top navbar-expand-lg navbar-dark pink scrolling-navbar">
+             <!--
+
+              <div *ngIf="isValid;then content else other_content">here is ignored</div>    
+<ng-template #content>content here...</ng-template>
+<ng-template #other_content>other content here...</ng-template>
+
+               -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent" *ngIf="isAgent">
+      <ul class="navbar-nav mr-auto">       
+       <li class="nav-item active">
+          <a [routerLink]="['about']"><b>Complaint Details</b></a>
+        </li>
+        <li class="nav-item">
+          <button (click)="logout()">Logout</button>
+        </li>
+
+      </ul>
+ 
+
+    </div>
+
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent" *ngIf="!isAgent">
+        <ul class="navbar-nav mr-auto">       
+         <li class="nav-item active">
+            <a [routerLink]="['about']"><b>Complaint Details</b></a>
+          </li>
+          <li class="nav-item active">
+            <a [routerLink]="['contact']"><b>Register New Complaint</b></a>
+          </li>
+          <li class="nav-item">
+            <button (click)="logout()">Logout</button>
+          </li>
+  
+        </ul>
+  
+     
+  
+      </div>
+
+  </nav>
+
+</header>
+<!-- <h1>{{useremailid}}</h1> -->
+
+ <!-- <h1 style="color:blue">{{Result|json}}</h1> -->
+
+<router-outlet></router-outlet>
